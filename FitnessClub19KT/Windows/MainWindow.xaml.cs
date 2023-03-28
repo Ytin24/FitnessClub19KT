@@ -29,9 +29,10 @@ namespace FitnessClub19KT
         public MainWindow()
         {
             InitializeComponent();
+            TblLog.Text = UserClass.AuthUser.IdRole.ToString();
             FrList.Content = new ListServicePage();
         }
-        //
+        
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ChangedButton == MouseButton.Left )
@@ -67,6 +68,11 @@ namespace FitnessClub19KT
         private void BtnClientList_Click(object sender, RoutedEventArgs e)
         {
             FrList.Content = new ListClient();
+        }
+
+        private void BtnGoToCart_Click(object sender, RoutedEventArgs e)
+        {
+            FrList.Content = new CartPage();
         }
     }
 }
